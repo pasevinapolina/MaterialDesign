@@ -1,4 +1,4 @@
-package by.fpmi.pasevinapolina.materialremindme.fragments;
+package by.fpmi.pasevinapolina.materialremindme.fragment;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
