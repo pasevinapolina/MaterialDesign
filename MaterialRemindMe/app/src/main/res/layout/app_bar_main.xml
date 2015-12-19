@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context="by.fpmi.pasevinapolina.materialremindme.MainActivity">
+    tools:context="by.fpmi.pasevinapolina.materialremindme.activity.MainActivity">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
@@ -17,7 +17,7 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="?attr/colorPrimary"
+            android:background="@color/primary"
             app:popupTheme="@style/AppTheme.PopupOverlay"/>
 
         <android.support.design.widget.TabLayout
@@ -29,14 +29,29 @@
             app:tabIndicatorColor="@color/white"
             android:id="@+id/tabLayout"
             app:tabIndicatorHeight="6dp"
-            app:tabBackground="@color/colorPrimary"
+            app:tabBackground="@color/primary"
             app:tabSelectedTextColor="@color/white"
-            android:fillViewport="true"/>
+            android:fillViewport="true"
+            android:background="@color/primary" />
 
     </android.support.design.widget.AppBarLayout>
 
 
     <include layout="@layout/content_main"/>
+
+    <ImageView android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/image_knowledge">
+
+    </ImageView>
+
+    <TextView android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_gravity="bottom|start"
+        android:layout_margin="32dp"
+        android:text="Press the play to start"
+        android:textStyle="bold"
+        android:textSize="18sp" />
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab"
@@ -44,6 +59,6 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
         android:layout_margin="@dimen/fab_margin"
-        android:src="@drawable/ic_plus"/>
+        android:src="@drawable/ic_play_arrow_black" />
 
 </android.support.design.widget.CoordinatorLayout>

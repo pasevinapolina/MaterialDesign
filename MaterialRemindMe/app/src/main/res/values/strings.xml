@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">MaterialRemindMe</string>
+    <string name="app_name">Quiz App</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
@@ -14,4 +14,22 @@
     <string name="send">Send</string>
     <string name="edit_message">Search</string>
     <string name="search">Search</string>
+    <string name="no_account">No account yet?</string>
+    <string name="signup">Sign Up</string>
+    <string name="login">Login</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="confirmpassword">Confirm Password</string>
+    <string name="create_account">Create Account</string>
+    <string name="name">Name</string>
+    <string name="title_activity_quiz">QuizActivity</string>
+
+    <string name="btn_true">True</string>
+    <string name="btn_false">False</string>
+
+    <string name="title_section1">Question 1</string>
+    <string name="title_section2">Question 2</string>
+    <string name="title_section3">Question 3</string>
+
+    <string name="hello_world">Hello world!</string>
 </resources>
