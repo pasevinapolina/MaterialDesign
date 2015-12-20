@@ -1,21 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:orientation="vertical"
               android:layout_width="match_parent"
-              android:layout_height="match_parent">
+              android:layout_height="match_parent"
+    android:background="@color/primary">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Progress"
-        android:id="@+id/selectedDate"
-        android:layout_gravity="center_horizontal"/>
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Approximately, how old was Coco Chanel when she died?"
+        android:id="@+id/textView3"
+        android:layout_marginTop="160dp"
+        android:gravity="center" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="60"
+        android:id="@+id/progressValue"
+        android:gravity="center"
+        android:layout_marginTop="224dp"
+        android:textSize="20dp" />
 
     <SeekBar
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/seekBar"
-        android:layout_gravity="center_horizontal"
         android:progress="50"
-        android:max="100"/>
-</LinearLayout>
+        android:max="100"
+        android:layout_gravity="center_vertical"
+        android:layout_marginRight="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="32dp" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/check_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="@dimen/fab_margin"
+        android:src="@drawable/ic_check_black"
+        />
+
+</android.support.design.widget.CoordinatorLayout>

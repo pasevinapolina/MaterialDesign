@@ -1,14 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:orientation="vertical"
               android:layout_width="match_parent"
               android:layout_height="match_parent">
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="When did The Second World War Started?"
+        android:id="@+id/textView3"
+        android:layout_marginTop="160dp"
+        android:gravity="center" />
 
-    <ImageView
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/photoView"
-        android:layout_gravity="center_horizontal"
-        android:src="@drawable/barash"/>
-</LinearLayout>
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:id="@+id/dateTextView"
+        android:gravity="center"
+        android:layout_marginTop="248dp"
+        android:textSize="20dp" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginTop="320dp"
+        android:layout_marginLeft="64dp"
+        android:layout_marginRight="64dp"
+        android:id="@+id/dateButton"
+        android:text="Select the date" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/check_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="@dimen/fab_margin"
+        android:src="@drawable/ic_check_black"
+        android:background="@color/accent"
+        style="@style/AppTheme.NoActionBar" />
+
+
+</android.support.design.widget.CoordinatorLayout>

@@ -9,6 +9,8 @@ import android.view.MenuItem;
 
 import by.fpmi.pasevinapolina.materialremindme.R;
 import by.fpmi.pasevinapolina.materialremindme.adapter.ViewPagerAdapter;
+import by.fpmi.pasevinapolina.materialremindme.fragment.FragmentFive;
+import by.fpmi.pasevinapolina.materialremindme.fragment.FragmentFour;
 import by.fpmi.pasevinapolina.materialremindme.fragment.FragmentOne;
 import by.fpmi.pasevinapolina.materialremindme.fragment.FragmentThree;
 import by.fpmi.pasevinapolina.materialremindme.fragment.FragmentTwo;
@@ -21,6 +23,8 @@ public class QuizActivity extends AppCompatActivity {
     FragmentOne tabOne;
     FragmentTwo tabTwo;
     FragmentThree tabThree;
+    FragmentFour tabFour;
+    FragmentFive tabFive;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,9 +41,14 @@ public class QuizActivity extends AppCompatActivity {
         tabOne = new FragmentOne();
         tabTwo = new FragmentTwo();
         tabThree = new FragmentThree();
+        tabFour = new FragmentFour();
+        tabFive = new FragmentFive();
         adapter.addFragment(tabOne, getString(R.string.title_section1).toUpperCase());
-        adapter.addFragment(tabTwo, getString(R.string.title_section1).toUpperCase());
-        adapter.addFragment(tabThree, getString(R.string.title_section1).toUpperCase());
+        adapter.addFragment(tabTwo, getString(R.string.title_section2).toUpperCase());
+        adapter.addFragment(tabThree, getString(R.string.title_section3).toUpperCase());
+        adapter.addFragment(tabFour, getString(R.string.title_section4).toUpperCase());
+        adapter.addFragment(tabFive, getString(R.string.title_section5).toUpperCase());
+
         viewPager.setAdapter(adapter);
     }
 
@@ -52,10 +61,6 @@ public class QuizActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
-
-        if (id == R.id.action_settings) {
-            return true;
-        }
 
         return super.onOptionsItemSelected(item);
     }

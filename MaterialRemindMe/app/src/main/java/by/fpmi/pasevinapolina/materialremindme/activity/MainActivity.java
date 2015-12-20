@@ -9,6 +9,8 @@ import android.provider.MediaStore;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
+import android.support.v4.view.ViewCompat;
+import android.support.v4.view.animation.FastOutSlowInInterpolator;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
@@ -17,6 +19,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.io.File;
@@ -35,36 +38,33 @@ public class MainActivity extends AppCompatActivity
 
     private Uri fileUri;
 
-//    private TabLayout tabLayout;
-//    private ViewPager viewPager;
-//
-//    FragmentOne tabOne;
-//    FragmentTwo tabTwo;
-//    FragmentThree tabThree;
-//
-//    TextView nameTextView;
-//    TextView emailTextView;
+    TextView nameTextView;
+    TextView emailTextView;
 
 
     void initComponents() {
-        //nameTextView = (TextView) findViewById(R.id.userNameTextView);
-        //emailTextView = (TextView) findViewById(R.id.emailTextView);
-        //emailTextView.setText((String) getIntent().getExtras().get("email"));
-        //nameTextView.setText(getIntent().getStringExtra("name"));
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        final FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                fab.setScaleX(0f);
+                fab.setScaleY(0f);
+                ViewCompat.animate(fab)
+                        .scaleX(1)
+                        .scaleY(1)
+                        .setInterpolator(new FastOutSlowInInterpolator())
+                        .setListener(null)
+                        .start();
                 Intent intent = new Intent(getApplicationContext(), QuizActivity.class);
                 startActivity(intent);
-//                Snackbar.make(view, "Create new note", Snackbar.LENGTH_LONG)
-//                        .setAction("Action", null).show();
             }
         });
+
+
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -75,11 +75,12 @@ public class MainActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-//        viewPager = (ViewPager) findViewById(R.id.viewpager);
-//        setupViewPager(viewPager);
-//
-//        tabLayout = (TabLayout) findViewById(R.id.tabLayout);
-//        tabLayout.setupWithViewPager(viewPager);
+        // TODO: 20.12.2015  view the name of the user
+
+//        nameTextView = (TextView) navigationView.findViewById(R.id.userNameTextView);
+//        emailTextView = (TextView) navigationView.findViewById(R.id.emailTextView);
+//        emailTextView.setText((String) getIntent().getExtras().get("email"));
+//        nameTextView.setText(getIntent().getStringExtra("name"));
 
     }
     @Override
@@ -90,25 +91,8 @@ public class MainActivity extends AppCompatActivity
         initComponents();
     }
 
-//    private void setupViewPager(ViewPager viewPager) {
-//        ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
-//        tabOne = new FragmentOne();
-//        tabTwo = new FragmentTwo();
-//        tabThree = new FragmentThree();
-//        adapter.addFragment(tabOne, getString(R.string.tab_one).toUpperCase());
-//        adapter.addFragment(tabTwo, getString(R.string.tab_two).toUpperCase());
-//        adapter.addFragment(tabThree, getString(R.string.tab_three).toUpperCase());
-//        viewPager.setAdapter(adapter);
-//    }
-
     @Override
     public void onBackPressed() {
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        if (drawer.isDrawerOpen(GravityCompat.START)) {
-            drawer.closeDrawer(GravityCompat.START);
-        } else {
-            super.onBackPressed();
-        }
     }
 
     @Override
@@ -121,7 +105,8 @@ public class MainActivity extends AppCompatActivity
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
 
-        if (id == R.id.action_settings) {
+        if (id == R.id.action_logout) {
+            finish();
             return true;
         }
 
@@ -137,6 +122,8 @@ public class MainActivity extends AppCompatActivity
         if (id == R.id.nav_camera) {
             captureImage();
 
+        } else if (id == R.id.nav_logout) {
+            finish();
         } else if (id == R.id.nav_gallery) {
 
         } else if (id == R.id.nav_manage) {

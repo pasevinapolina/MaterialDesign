@@ -30,6 +30,9 @@
     <string name="title_section1">Question 1</string>
     <string name="title_section2">Question 2</string>
     <string name="title_section3">Question 3</string>
+    <string name="title_section4">Question 4</string>
+    <string name="title_section5">Question 5</string>
 
     <string name="hello_world">Hello world!</string>
+    <string name="logout">Log out</string>
 </resources>

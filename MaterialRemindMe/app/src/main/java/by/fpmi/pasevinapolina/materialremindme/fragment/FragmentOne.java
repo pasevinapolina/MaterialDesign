@@ -66,7 +66,9 @@ public class FragmentOne extends Fragment {
                 else {
                     res = "Incorrect";
                 }
-                Snackbar.make(view, "Result: " + res, Snackbar.LENGTH_LONG).setAction("Action", null).show();
+
+                Snackbar.make(view, "Result: " + res, Snackbar.LENGTH_SHORT).setAction("Action", null).show();
+
             }
         });
 
