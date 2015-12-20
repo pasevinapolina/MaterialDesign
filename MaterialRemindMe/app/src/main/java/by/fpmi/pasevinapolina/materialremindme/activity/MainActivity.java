@@ -9,6 +9,8 @@ import android.provider.MediaStore;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
+import android.support.v4.view.ViewCompat;
+import android.support.v4.view.animation.FastOutSlowInInterpolator;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
@@ -35,13 +37,6 @@ public class MainActivity extends AppCompatActivity
 
     private Uri fileUri;
 
-//    private TabLayout tabLayout;
-//    private ViewPager viewPager;
-//
-//    FragmentOne tabOne;
-//    FragmentTwo tabTwo;
-//    FragmentThree tabThree;
-//
 //    TextView nameTextView;
 //    TextView emailTextView;
 
@@ -55,16 +50,24 @@ public class MainActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        final FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                fab.setScaleX(0f);
+                fab.setScaleY(0f);
+                ViewCompat.animate(fab)
+                        .scaleX(1)
+                        .scaleY(1)
+                        .setInterpolator(new FastOutSlowInInterpolator())
+                        .setListener(null)
+                        .start();
                 Intent intent = new Intent(getApplicationContext(), QuizActivity.class);
                 startActivity(intent);
-//                Snackbar.make(view, "Create new note", Snackbar.LENGTH_LONG)
-//                        .setAction("Action", null).show();
             }
         });
+
+
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -75,11 +78,6 @@ public class MainActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-//        viewPager = (ViewPager) findViewById(R.id.viewpager);
-//        setupViewPager(viewPager);
-//
-//        tabLayout = (TabLayout) findViewById(R.id.tabLayout);
-//        tabLayout.setupWithViewPager(viewPager);
 
     }
     @Override
@@ -90,25 +88,8 @@ public class MainActivity extends AppCompatActivity
         initComponents();
     }
 
-//    private void setupViewPager(ViewPager viewPager) {
-//        ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
-//        tabOne = new FragmentOne();
-//        tabTwo = new FragmentTwo();
-//        tabThree = new FragmentThree();
-//        adapter.addFragment(tabOne, getString(R.string.tab_one).toUpperCase());
-//        adapter.addFragment(tabTwo, getString(R.string.tab_two).toUpperCase());
-//        adapter.addFragment(tabThree, getString(R.string.tab_three).toUpperCase());
-//        viewPager.setAdapter(adapter);
-//    }
-
     @Override
     public void onBackPressed() {
-//        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-//        if (drawer.isDrawerOpen(GravityCompat.START)) {
-//            drawer.closeDrawer(GravityCompat.START);
-//        } else {
-//            super.onBackPressed();
-//        }
     }
 
     @Override
