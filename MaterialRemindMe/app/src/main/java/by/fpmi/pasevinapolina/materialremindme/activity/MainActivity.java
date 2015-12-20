@@ -19,6 +19,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.io.File;
@@ -37,15 +38,11 @@ public class MainActivity extends AppCompatActivity
 
     private Uri fileUri;
 
-//    TextView nameTextView;
-//    TextView emailTextView;
+    TextView nameTextView;
+    TextView emailTextView;
 
 
     void initComponents() {
-        //nameTextView = (TextView) findViewById(R.id.userNameTextView);
-        //emailTextView = (TextView) findViewById(R.id.emailTextView);
-        //emailTextView.setText((String) getIntent().getExtras().get("email"));
-        //nameTextView.setText(getIntent().getStringExtra("name"));
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -78,6 +75,12 @@ public class MainActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
+        // TODO: 20.12.2015  view the name of the user
+
+//        nameTextView = (TextView) navigationView.findViewById(R.id.userNameTextView);
+//        emailTextView = (TextView) navigationView.findViewById(R.id.emailTextView);
+//        emailTextView.setText((String) getIntent().getExtras().get("email"));
+//        nameTextView.setText(getIntent().getStringExtra("name"));
 
     }
     @Override
