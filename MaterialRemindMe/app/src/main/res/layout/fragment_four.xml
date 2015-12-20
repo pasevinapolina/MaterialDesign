@@ -2,7 +2,63 @@
 <android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/primary">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Choose the countries located in Africa:"
+        android:id="@+id/textView3"
+        android:layout_marginTop="120dp"
+        android:gravity="center"
+        android:textSize="24dp" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="208dp"
+        android:layout_marginLeft="48dp"
+        android:text="Eritrea"
+        android:textSize="16sp"
+        android:id="@+id/checkbox1" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="248dp"
+        android:layout_marginLeft="48dp"
+        android:text="Zambia"
+        android:textSize="16sp"
+        android:id="@+id/checkbox2" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="288dp"
+        android:layout_marginLeft="48dp"
+        android:text="Guatemala"
+        android:textSize="16sp"
+        android:id="@+id/checkbox3" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="328dp"
+        android:layout_marginLeft="48dp"
+        android:text="Burundi"
+        android:textSize="16sp"
+        android:id="@+id/checkbox4" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="368dp"
+        android:layout_marginLeft="48dp"
+        android:text="Brunei"
+        android:textSize="16sp"
+        android:id="@+id/checkbox5" />
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/check_button"

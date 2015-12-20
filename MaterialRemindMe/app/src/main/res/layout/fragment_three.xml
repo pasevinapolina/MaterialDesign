@@ -2,7 +2,8 @@
 <android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:orientation="vertical"
               android:layout_width="match_parent"
-              android:layout_height="match_parent">
+              android:layout_height="match_parent"
+    android:background="@color/primary">
 
     <TextView
         android:layout_width="wrap_content"
@@ -30,7 +31,8 @@
         android:layout_marginLeft="64dp"
         android:layout_marginRight="64dp"
         android:id="@+id/dateButton"
-        android:text="Select the date" />
+        android:text="Select the date"
+        android:background="@drawable/ripple" />
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/check_button"
