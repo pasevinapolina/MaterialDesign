@@ -2,7 +2,41 @@
 <android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/primary">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Name the other state in the USA that starts with the letter A:"
+        android:id="@+id/textView3"
+        android:layout_marginTop="120dp"
+        android:gravity="center"
+        android:textSize="24dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Alabama, Alaska, Arizona, and"
+        android:id="@+id/dateTextView"
+        android:gravity="center"
+        android:layout_marginTop="248dp"
+        android:textSize="20dp" />
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="288dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginLeft="16dp">
+        <EditText android:id="@+id/input_answer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"/>
+    </android.support.design.widget.TextInputLayout>
+
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/check_button"
